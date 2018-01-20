@@ -1,22 +1,67 @@
-# Ближайшие бары
+# Bar search utility
 
-[FIXME. Здесь будет описание проекта]
+Utility for seach min, max and nearest bar in msk
 
-# Как запустить
+# Quickstart
 
-Скрипт требует для своей работы установленного интерпретатора Python версии 3.5
+for launch need python 3
+input file should be in UTF-8.
+input file must be passed as an argument.
 
-Запуск на Linux:
+Example input file
+```
+{
+  "features": [{
+    "geometry": {
+      "coordinates": [37.621587946152012, 55.765366956608361],
+      "type": "Point"
+    },
+    "properties": {
+      "DatasetId": 1796,
+      "VersionNumber": 2,
+      "ReleaseNumber": 2,
+      "RowId": "20a0b7c9-dad3-4af8-a2a2-08170f74379b",
+      "Attributes": {
+        "global_id": 20660594,
+        "Name": "Юнион Джек",
+        "IsNetObject": "нет",
+        "OperatingCompany": null,
+        "AdmArea": "Центральный административный округ",
+        "District": "Мещанский район",
+        "Address": "Нижний Кисельный переулок, дом 3, строение 1",
+        "PublicPhone": [{
+          "PublicPhone": "(495) 621-19-63"
+        }],
+        "SeatsCount": 30,
+        "SocialPrivileges": "нет"
+      }
+    },
+    "type": "Feature"
+  },
+```
 
-```bash
-
-$ python bars.py # possibly requires call of python3 executive instead of just python
-# FIXME вывести пример ответа скрипта
+Example of script launch on windows, Python 3.6:
+```
+E:\WORK\wallie\4\bars.py bars.json
 
 ```
 
-Запуск на Windows происходит аналогично.
+Example of script launch on Linux, Python 3.6:
 
-# Цели проекта
+```
+$ ~/WORK/wallie/4$ python3 bars.py bars.json 
+```
+Enter your coordiantes (point separator)
 
-Код создан в учебных целях. В рамках учебного курса по веб-разработке - [DEVMAN.org](https://devman.org)
+Example output:
+```
+Самый маленький бар БАР. СОКИ
+Самый большой бар Спорт бар «Красная машина»
+Введите долготу : 37.665301111111
+Введите широту  : 55.7350976999999999999
+Ближайший бар Бильярдная
+
+```
+# Project Goals
+
+The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)

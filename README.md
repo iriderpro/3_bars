@@ -5,6 +5,7 @@ Utility for seach min, max and nearest bar in msk.
 # Quickstart
 
 for launch need python 3
+
 For downloading input file need:
 *  Sign in on data.mos.ru
 *  Get API key

@@ -45,9 +45,6 @@ if __name__ == '__main__':
             except ValueError:
                 print('Неверный формат. Попробуй еще раз...')
                 sys.exit()
-            if 60.0 < longitude or latitude < 30.0:
-                print('Далековато до москвы')
-                sys.exit()
             nearest_bar = find_nearest_bar(
                 py_obj_bars,
                 longitude,

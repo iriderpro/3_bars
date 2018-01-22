@@ -1,11 +1,15 @@
 # Bar search utility
 
-Utility for seach min, max and nearest bar in msk
+Utility for seach min, max and nearest bar in msk.
 
 # Quickstart
 
 for launch need python 3
-input file should be in UTF-8.
+For downloading input file need:
+*  Sign in on data.mos.ru
+*  Get API key
+*  Download input file on refer:
+  https://apidata.mos.ru/v1/features/1796?api_key={place_your_API_key_here}
 input file must be passed as an argument.
 
 Example input file

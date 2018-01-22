@@ -9,8 +9,9 @@ for launch need python 3
 For downloading input file need:
 *  Sign in on data.mos.ru
 *  Get API key
-*  Download input file on refer:
+*  Download input file bars.json on refer:
   https://apidata.mos.ru/v1/features/1796?api_key={place_your_API_key_here}
+  
 input file must be passed as an argument.
 
 Example input file

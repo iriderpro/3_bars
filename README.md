@@ -6,8 +6,7 @@ Utility for seach min, max and nearest bar in msk.
 
 for launch need python 3
 
-
-*  Download input file bars.json on refer:
+Download input file bars.json on refer:
 https://devman.org/fshare/1503831681/4/
   
 input file must be passed as an argument.

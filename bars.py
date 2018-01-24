@@ -11,14 +11,18 @@ def load_data(filepath):
 
 
 def find_min_bar(bars):
-    min_bar = min(bars,
-                  key=lambda i: i['properties']['Attributes']['SeatsCount'])
+    min_bar = min(
+        bars,
+        key=lambda i: i['properties']['Attributes']['SeatsCount'],
+    )
     return min_bar
 
 
 def find_max_bar(bars):
-    max_bar = max(bars,
-                  key=lambda i: i['properties']['Attributes']['SeatsCount'])
+    max_bar = max(
+        bars,
+        key=lambda i: i['properties']['Attributes']['SeatsCount'],
+    )
     return max_bar
 
 
@@ -33,24 +37,23 @@ def find_nearest_bar(bars, longitude, latitude):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 1 and os.path.exists(sys.argv[1]):
-        bars = load_data(sys.argv[1])['features']
-        min_bar = find_min_bar(bars)
-        max_bar = find_max_bar(bars)
-        print('Самый маленький бар ',
-              min_bar['properties']['Attributes']['Name'])
-        print('Cамый большой бар',
-              max_bar['properties']['Attributes']['Name'])
-        try:
-            longitude = float(input('Введите долготу : '))
-            latitude = float(input('Введите широту  : '))
-        except ValueError:
-            sys.exit('Неверный формат. Попробуй еще раз...')
-        nearest_bar = find_nearest_bar(
-            bars,
-            longitude,
-            latitude,
-        )
-        print(nearest_bar['properties']['Attributes']['Name'])
-    else:
-        print('нет входного файла')
+    if len(sys.argv) == 1 or os.path.exists(sys.argv[1]) is False:
+        sys.exit('Не указан входной файл или он не существует')
+    bars = load_data(sys.argv[1])['features']
+    min_bar = find_min_bar(bars)
+    max_bar = find_max_bar(bars)
+    print('Самый маленький бар ',
+          min_bar['properties']['Attributes']['Name'])
+    print('Cамый большой бар',
+          max_bar['properties']['Attributes']['Name'])
+    try:
+        longitude = float(input('Введите долготу : '))
+        latitude = float(input('Введите широту  : '))
+    except ValueError:
+        sys.exit('Неверный формат. Попробуй еще раз...')
+    nearest_bar = find_nearest_bar(
+        bars,
+        longitude,
+        latitude,
+    )
+    print(nearest_bar['properties']['Attributes']['Name'])
